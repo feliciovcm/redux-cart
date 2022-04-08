@@ -31,7 +31,6 @@ const cart: Reducer<ICartState | undefined, IAction> = (state = INITIAL_STATE, a
       };
     }
     case ActionTypes.addProductToCartFailure: {
-      console.log('failure', action.payload);
       return {
         ...state,
         failedStockCheck: [

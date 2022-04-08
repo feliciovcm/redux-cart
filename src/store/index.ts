@@ -4,9 +4,11 @@ import { ICartState } from './modules/cart/types';
 import rootReducer from './modules/rootReducer';
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './modules/rootSaga';
+import { IGlobalState } from './modules/global/types';
 
 export interface IState {
   cart: ICartState;
+  authetication: IGlobalState;
 }
 
 const sagaMiddleware = createSagaMiddleware();

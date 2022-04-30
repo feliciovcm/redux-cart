@@ -10,6 +10,11 @@ import { loginSuccess } from '../../store/modules/global/actions';
 import { useDispatch } from 'react-redux';
 import { signInWIthEmailAndPassword } from '../../services/authetication';
 
+interface IValues {
+  email: string;
+  password: string;
+}
+
 export default function LoginPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -19,7 +24,7 @@ export default function LoginPage() {
     dispatch(loginSuccess(user))
   }, [dispatch])
 
-  async function onSubmit(values: any, { setSubmitting }: any) {
+  async function onSubmit(values: IValues, { setSubmitting }: any) {
     try {
       const { data } = await signInWIthEmailAndPassword(values.email, values.password)
       await login(data);

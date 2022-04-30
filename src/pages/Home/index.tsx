@@ -12,6 +12,7 @@ export default function HomePage() {
   const logout = useCallback(() => {
     dispatch(onUserLogout())
   }, [dispatch])
+
   return (
     <Container>
       <Box>

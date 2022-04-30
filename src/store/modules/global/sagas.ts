@@ -18,13 +18,11 @@ export interface IProfileResponse {
 function* onUserLogin() {
   const token = JSON.parse(localStorage.getItem("@redux:token") ?? "{}");
   try {
-
     const {data}: AxiosResponse<IProfileResponse> = yield call(loginApi.get, '/account', {headers: {
       Authorization: `Bearer ${token}`
     }});
     yield put(getProfileSuccess(data))
   } catch (error) {
-    console.log(error);
     yield put(onUserLogout())
   }
 }

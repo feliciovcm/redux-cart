@@ -5,8 +5,6 @@ const api = axios.create({
 })
 
 const token = JSON.parse(localStorage.getItem("@redux:token") ?? "{}");
-console.log(token);
-
 
 const loginApi = axios.create({
   baseURL: 'http://localhost:3333',

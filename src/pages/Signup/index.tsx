@@ -16,7 +16,7 @@ export default function SignUpPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const signUp = useCallback((user) => {
+  const signUp = useCallback((user: any) => {
     dispatch(loginSuccess(user))
   }, [dispatch])
 
